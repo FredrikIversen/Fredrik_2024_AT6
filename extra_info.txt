@@ -1,0 +1,30 @@
+UserInputValidator – Simple Positive Integer Validator
+
+======================================================
+
+This small Python class helps you safely extract positive integers from user input
+(usually a list of strings) and gives clear feedback.
+
+Features:
+---------
+• validate_positive_integers(items)
+  → Takes a list (or tuple) of strings
+  → Returns a new list containing only the positive integers (as real int values)
+  → Ignores everything else: letters, negative numbers, zero, empty strings, etc.
+  → Example: ["10", "abc", "0", "-5", "42"]  →  returns [10, 42]
+
+• validation_message(items)
+  → Does the same validation as above
+  → Automatically prints "List has been validated!" ONLY when a real 
+    list or tuple is provided
+  → Stays silent for empty lists, strings, None, numbers, etc.
+  → Always returns the clean list of positive integers (even when silent)
+
+Usage example:
+--------------
+validator = UserInputValidator()
+
+my_input = ["34", "hello", "7", "-2", "100"]
+validator.validation_message(my_input)
+# Output: List has been validated!
+# Returns: [34, 7, 100]
